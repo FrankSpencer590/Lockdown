@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
     @IBOutlet weak var counterLabel: UILabel!
@@ -23,7 +24,7 @@ class ViewController: UIViewController {
         let secondsSince = currentDate.timeIntervalSince(startDate)
         let daysSince = secondsSince / 60 / 60 / 24
         
-        counterLabel.text = String(describing: Int(floor(daysSince))) + " days in isolation"
+        counterLabel.text = String(describing: Int(floor(daysSince))) + " days in lockdown"
         
     }
     

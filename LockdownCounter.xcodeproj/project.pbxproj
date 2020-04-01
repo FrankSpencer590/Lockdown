@@ -297,7 +297,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rhm-computing.lockdown";
 				PRODUCT_NAME = Lockdown;
 				SWIFT_VERSION = 5.0;
@@ -318,7 +318,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rhm-computing.lockdown";
 				PRODUCT_NAME = Lockdown;
 				SWIFT_VERSION = 5.0;
