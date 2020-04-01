@@ -9,10 +9,26 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var counterLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let isoDate = "2020-03-23T00:00:00+0000"
+
+        let dateFormatter = ISO8601DateFormatter()
+        let startDate = dateFormatter.date(from:isoDate)!
+        let currentDate = Date()
+        
+        let secondsSince = currentDate.timeIntervalSince(startDate)
+        let daysSince = secondsSince / 60 / 60 / 24
+        
+        counterLabel.text = String(describing: Int(floor(daysSince))) + " days in isolation"
+        
+    }
+    
+    override var prefersStatusBarHidden: Bool {
+        return true
     }
 
 
