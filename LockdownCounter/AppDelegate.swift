@@ -8,28 +8,68 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 import CoreLocation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        /*
+        
+        // MARK: - Date calculating
+        let isoDate = "2020-03-23T00:00:00+0000"
+
+        let dateFormatter = ISO8601DateFormatter()
+        let startDate = dateFormatter.date(from:isoDate)!
+        let currentDate = Date()
+        let secondsSince = currentDate.timeIntervalSince(startDate)
+        
+        GlobalData.Data.days = Int(floor(secondsSince / 60 / 60 / 24))
+        
+        // MARK: - First launch set up stuff
+        
+        let center = UNUserNotificationCenter.current()
+        
         if UserDefaults.standard.bool(forKey: "notFirstLaunch?") {
             // NOT FIRST LAUNCH
         } else {
             // FIRST LAUNCH
-            print("oh dear")
             UserDefaults.standard.setValue(true, forKeyPath: "notFirstLaunch?")
+           /*
+            let group = DispatchGroup()
+            group.enter()
+            
+            DispatchQueue.main.async {
+                locationManager.requestWhenInUseAuthorization()
+                group.leave()
+            }
+            
+            group.notify(queue: .main) {
+                UserDefaults.standard.setValue(locationManager.location?.coordinate,
+                                               forKeyPath: "homeCoords")
+            }
+            
+            */
+            center.requestAuthorization(options: [.alert, .sound]) { granted, error in   // request notification auth
+                // Enable or disable features based on authorization.
+                if (granted) {
+                    UserDefaults.standard.set(true, forKey: "notificationsAllowed")
+                } else {
+                    UserDefaults.standard.set(false, forKey: "notificationsAllowed")
+                }
+            }
+            
         }
- */
+        
         return true
     }
+    
+    
 
-    // MARK: UISceneSession Lifecycle
+    // MARK: - UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.

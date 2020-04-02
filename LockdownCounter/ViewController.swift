@@ -8,26 +8,109 @@
 
 import UIKit
 import CoreLocation
+import UserNotifications
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotificationCenterDelegate {
     @IBOutlet weak var counterLabel: UILabel!
+    
+    var locationManager = CLLocationManager()
+    
+    var notificationCenter = UNUserNotificationCenter.current()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDefaults.standard.double(forKey: "homeLat") == 0.0 && UserDefaults.standard.double(forKey: "homeLon") == 0.0 {
+            
+            performSegue(withIdentifier: "firstLaunch", sender: nil) // open splash screen
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        let isoDate = "2020-03-23T00:00:00+0000"
+        counterLabel.text = String(describing: GlobalData.Data.days) + " days in lockdown"
 
-        let dateFormatter = ISO8601DateFormatter()
-        let startDate = dateFormatter.date(from:isoDate)!
-        let currentDate = Date()
+        if UserDefaults.standard.double(forKey: "homeLat") != 0.0 && UserDefaults.standard.double(forKey: "homeLon") != 0.0 && CLLocationManager.authorizationStatus() != .denied {
+            
+            // MARK: - Location Stuff
+            
+            notificationCenter.delegate = self
+            locationManager.delegate = self
+            locationManager.requestWhenInUseAuthorization()
+
+            if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+                /*
+                if UserDefaults.standard.double(forKey: "homeLat") == 0.0 && UserDefaults.standard.double(forKey: "homeLon") == 0.0 {
+                    UserDefaults.standard.setValue(locationManager.location?.coordinate.latitude,
+                                                   forKeyPath: "homeLat")
+                    
+                    UserDefaults.standard.setValue(locationManager.location?.coordinate.longitude,
+                                                   forKeyPath: "homeLon")
         
-        let secondsSince = currentDate.timeIntervalSince(startDate)
-        let daysSince = secondsSince / 60 / 60 / 24
+                }
+ */
+                
+                let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude:
+                    UserDefaults.standard.double(forKey: "homeLat") as CLLocationDegrees,
+                                                                             longitude:
+                    UserDefaults.standard.double(forKey: "homeLon") as CLLocationDegrees),
+                                              radius: 40,
+                                              identifier: "Home")
+                
+                region.notifyOnExit = true
+                region.notifyOnEntry = false
+                locationManager.startMonitoring(for: region)
+                
+                let trigger = UNLocationNotificationTrigger(region: region, repeats: false)
+                
+                let content = UNMutableNotificationContent()
+                
+                content.title = "Warning"
+                content.body  = "Keep your social distance"
+                content.sound = UNNotificationSound.default
+                content.badge = 1
+                
+                
+                let identifier = "warningNotification"
+                let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+
+                notificationCenter.add(request) { (error) in
+                    if let error = error {
+                        print("Error \(error.localizedDescription)")
+                    }
+                }
+                
+                if !region.contains(locationManager.location!.coordinate) {
+                    counterLabel.textColor = .systemRed
+                }
+                
         
-        counterLabel.text = String(describing: Int(floor(daysSince))) + " days in lockdown"
+            }
+        }
         
     }
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .denied {
+            
+        }
+    }
     
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        UserDefaults.standard.setValue(CLLocationManager().location?.coordinate,
+                                       forKeyPath: "homeCoords")
+    }
+    
+/*
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+    }
+    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //
+    }
+    
+
     override var prefersStatusBarHidden: Bool {
         return true
     }

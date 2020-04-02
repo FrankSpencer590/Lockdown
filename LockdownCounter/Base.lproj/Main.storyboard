@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Lockdown" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Home" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="Lockdown" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#StayInside" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AX3-3B-P7F">
                                 <rect key="frame" x="20" y="821" width="374" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="3KM-b5-Qtk"/>
+                                    <constraint firstAttribute="height" constant="36" id="Urf-Ws-CFY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
@@ -33,7 +33,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#ProtectTheNHS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkR-2Z-dT3">
                                 <rect key="frame" x="20" y="49" width="374" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="nuU-i9-6o9"/>
+                                    <constraint firstAttribute="height" constant="36" id="eBG-ce-ZUP"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
@@ -42,26 +42,108 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AX3-3B-P7F" secondAttribute="bottom" constant="5" id="7nY-RQ-b6N"/>
-                            <constraint firstItem="43h-cI-GJ2" firstAttribute="leading" secondItem="AX3-3B-P7F" secondAttribute="leading" id="8j0-GK-1pC"/>
-                            <constraint firstItem="GkR-2Z-dT3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="EQT-7j-Kce"/>
-                            <constraint firstItem="43h-cI-GJ2" firstAttribute="trailing" secondItem="GkR-2Z-dT3" secondAttribute="trailing" id="Ih1-PY-PBJ"/>
-                            <constraint firstItem="GkR-2Z-dT3" firstAttribute="trailing" secondItem="AX3-3B-P7F" secondAttribute="trailing" id="KKg-DD-mmR"/>
-                            <constraint firstItem="43h-cI-GJ2" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="SyY-LS-P1k"/>
-                            <constraint firstItem="43h-cI-GJ2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="USd-x5-4mi"/>
-                            <constraint firstItem="GkR-2Z-dT3" firstAttribute="leading" secondItem="AX3-3B-P7F" secondAttribute="leading" id="a7h-5f-DRI"/>
-                            <constraint firstItem="43h-cI-GJ2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fgP-NW-fgv"/>
-                            <constraint firstItem="43h-cI-GJ2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lN9-WX-Ym9"/>
+                            <constraint firstItem="43h-cI-GJ2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="0MT-8D-BwE"/>
+                            <constraint firstItem="GkR-2Z-dT3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="18G-in-VcO"/>
+                            <constraint firstItem="43h-cI-GJ2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="28r-0u-srK"/>
+                            <constraint firstItem="GkR-2Z-dT3" firstAttribute="leading" secondItem="AX3-3B-P7F" secondAttribute="leading" id="8MC-YJ-cv9"/>
+                            <constraint firstItem="43h-cI-GJ2" firstAttribute="trailing" secondItem="GkR-2Z-dT3" secondAttribute="trailing" id="TtB-U6-62e"/>
+                            <constraint firstItem="43h-cI-GJ2" firstAttribute="leading" secondItem="AX3-3B-P7F" secondAttribute="leading" id="XjW-Y5-X6I"/>
+                            <constraint firstItem="GkR-2Z-dT3" firstAttribute="trailing" secondItem="AX3-3B-P7F" secondAttribute="trailing" id="Yjx-CL-q3v"/>
+                            <constraint firstItem="43h-cI-GJ2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cmF-9c-zFQ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AX3-3B-P7F" secondAttribute="bottom" constant="5" id="eLg-DS-y9b"/>
+                            <constraint firstItem="43h-cI-GJ2" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="wso-xV-eBI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="counterLabel" destination="43h-cI-GJ2" id="MP3-Iy-30u"/>
+                        <segue destination="7gD-uE-ekl" kind="showDetail" identifier="firstLaunch" id="KD8-HT-iDJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
         </scene>
+        <!--Splash Screen-->
+        <scene sceneID="aPG-qT-p5O">
+            <objects>
+                <viewController title="Splash Screen" id="7gD-uE-ekl" customClass="SplashScreenViewController" customModule="Lockdown" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eTE-al-OQS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vCP-4W-ITb">
+                                <rect key="frame" x="20" y="599" width="374" height="66"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="1vc-No-eYX"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="6iW-fq-XMJ"/>
+                                <state key="normal" title="Set as current location">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="inHousePressed:" destination="7gD-uE-ekl" eventType="touchUpInside" id="DE1-PK-YkD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6MN-nM-RSn">
+                                <rect key="frame" x="20" y="702" width="374" height="66"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="66" id="kgP-9x-Edn"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="Olt-8s-0kA"/>
+                                <state key="normal" title="I'm away at the moment">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="outHousePressed:" destination="7gD-uE-ekl" eventType="touchUpInside" id="xiA-qX-rYH"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="J0B-qp-8PW">
+                                <rect key="frame" x="20" y="153" width="374" height="435.5"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set home location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGC-Db-5tp">
+                                <rect key="frame" x="20" y="20" width="374" height="124"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="124" id="bHa-gT-nUq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="44"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="HlD-ip-jwB" firstAttribute="bottom" secondItem="6MN-nM-RSn" secondAttribute="bottom" constant="40" id="1pz-aN-wPf"/>
+                            <constraint firstItem="J0B-qp-8PW" firstAttribute="leading" secondItem="vCP-4W-ITb" secondAttribute="leading" id="2PD-UL-ESa"/>
+                            <constraint firstItem="DGC-Db-5tp" firstAttribute="trailing" secondItem="eTE-al-OQS" secondAttribute="trailingMargin" id="9ts-cw-Hbr"/>
+                            <constraint firstItem="J0B-qp-8PW" firstAttribute="top" secondItem="DGC-Db-5tp" secondAttribute="bottom" constant="7.5" id="Cvn-4n-ePc"/>
+                            <constraint firstItem="DGC-Db-5tp" firstAttribute="top" secondItem="HlD-ip-jwB" secondAttribute="top" constant="20" id="KjJ-HN-y03"/>
+                            <constraint firstItem="DGC-Db-5tp" firstAttribute="leading" secondItem="J0B-qp-8PW" secondAttribute="leading" id="Nhd-UW-Dfr"/>
+                            <constraint firstItem="vCP-4W-ITb" firstAttribute="trailing" secondItem="6MN-nM-RSn" secondAttribute="trailing" id="THL-AB-Ndr"/>
+                            <constraint firstItem="vCP-4W-ITb" firstAttribute="top" secondItem="J0B-qp-8PW" secondAttribute="bottom" constant="8" id="eSM-aV-qi0"/>
+                            <constraint firstItem="6MN-nM-RSn" firstAttribute="top" secondItem="vCP-4W-ITb" secondAttribute="bottom" constant="37" id="ghP-Zz-XV9"/>
+                            <constraint firstItem="DGC-Db-5tp" firstAttribute="trailing" secondItem="J0B-qp-8PW" secondAttribute="trailing" id="gnX-Cf-nAS"/>
+                            <constraint firstItem="J0B-qp-8PW" firstAttribute="trailing" secondItem="vCP-4W-ITb" secondAttribute="trailing" id="iwZ-QI-W9V"/>
+                            <constraint firstItem="DGC-Db-5tp" firstAttribute="leading" secondItem="eTE-al-OQS" secondAttribute="leadingMargin" id="jWJ-CU-kcy"/>
+                            <constraint firstItem="vCP-4W-ITb" firstAttribute="leading" secondItem="6MN-nM-RSn" secondAttribute="leading" id="xjE-Hj-N0i"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HlD-ip-jwB"/>
+                    </view>
+                    <connections>
+                        <outlet property="inHouseButton" destination="vCP-4W-ITb" id="16g-az-W2J"/>
+                        <outlet property="outHouseButton" destination="6MN-nM-RSn" id="243-SZ-MzY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oMc-9P-7ef" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="989.85507246376824" y="129.91071428571428"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="house.fill" catalog="system" width="128" height="106"/>
+    </resources>
 </document>
