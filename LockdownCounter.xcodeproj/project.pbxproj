@@ -16,6 +16,7 @@
 		22520AE62432645000A80776 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22520AE42432645000A80776 /* LaunchScreen.storyboard */; };
 		22520AEE2434F57400A80776 /* GlobalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22520AED2434F57400A80776 /* GlobalData.swift */; };
 		22520B08243626B600A80776 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22520B07243626B600A80776 /* SplashScreenViewController.swift */; };
+		22520B0A24365DF700A80776 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 22520B0924365DF700A80776 /* Settings.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,6 +45,7 @@
 		22520AED2434F57400A80776 /* GlobalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalData.swift; sourceTree = "<group>"; };
 		22520AF1243518B700A80776 /* Lockdown.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Lockdown.entitlements; sourceTree = "<group>"; };
 		22520B07243626B600A80776 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		22520B0924365DF700A80776 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				22520AE22432645000A80776 /* Assets.xcassets */,
 				22520AE42432645000A80776 /* LaunchScreen.storyboard */,
 				22520AED2434F57400A80776 /* GlobalData.swift */,
+				22520B0924365DF700A80776 /* Settings.bundle */,
 				22520AE72432645000A80776 /* Info.plist */,
 				22520ADF2432644F00A80776 /* LockdownCounter.xcdatamodeld */,
 			);
@@ -150,6 +153,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22520B0A24365DF700A80776 /* Settings.bundle in Resources */,
 				22520AE62432645000A80776 /* LaunchScreen.storyboard in Resources */,
 				22520AE32432645000A80776 /* Assets.xcassets in Resources */,
 				22520ADE2432644F00A80776 /* Main.storyboard in Resources */,
@@ -315,7 +319,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LockdownCounter/Lockdown.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 8NVY4CRKVK;
 				INFOPLIST_FILE = LockdownCounter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
@@ -323,7 +327,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1;
+				MARKETING_VERSION = 3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rhm-computing.lockdown";
 				PRODUCT_NAME = Lockdown;
 				SWIFT_VERSION = 5.0;
@@ -338,7 +342,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LockdownCounter/Lockdown.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 8;
 				DEVELOPMENT_TEAM = 8NVY4CRKVK;
 				INFOPLIST_FILE = LockdownCounter/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
@@ -346,7 +350,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.1;
+				MARKETING_VERSION = 3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rhm-computing.lockdown";
 				PRODUCT_NAME = Lockdown;
 				SWIFT_VERSION = 5.0;

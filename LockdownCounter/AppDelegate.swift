@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             // FIRST LAUNCH
             UserDefaults.standard.setValue(true, forKeyPath: "notFirstLaunch?")
+            UserDefaults.standard.setValue(true, forKey: "warnings")
            /*
             let group = DispatchGroup()
             group.enter()

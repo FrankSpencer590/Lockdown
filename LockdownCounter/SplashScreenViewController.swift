@@ -12,6 +12,7 @@ import CoreLocation
 class SplashScreenViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var inHouseButton: UIButton!
     @IBOutlet weak var outHouseButton: UIButton!
+    @IBOutlet weak var dontShowButton: UIButton!
     
     var locationManager = CLLocationManager()
     
@@ -21,6 +22,7 @@ class SplashScreenViewController: UIViewController, CLLocationManagerDelegate {
         // Do any additional setup after loading the view.
         inHouseButton.layer.cornerRadius = 10
         outHouseButton.layer.cornerRadius = 10
+        dontShowButton.layer.cornerRadius = 10
         
         
     }
@@ -30,6 +32,13 @@ class SplashScreenViewController: UIViewController, CLLocationManagerDelegate {
         
         
     }
+    @IBAction func dontShowPressed(_ sender: Any) {
+        UserDefaults.standard.setValue(false, forKey: "warnings")
+        
+        self.dismiss(animated: true) {
+            //
+        }
+    }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse || status == .authorizedAlways {
@@ -38,6 +47,8 @@ class SplashScreenViewController: UIViewController, CLLocationManagerDelegate {
             
             UserDefaults.standard.setValue(locationManager.location?.coordinate.longitude,
                                            forKeyPath: "homeLon")
+        } else if status == .denied {
+            UserDefaults.standard.setValue(false, forKey: "warnings")
         }
         
         self.dismiss(animated: true) {

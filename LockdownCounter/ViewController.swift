@@ -18,7 +18,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
     var notificationCenter = UNUserNotificationCenter.current()
     
     override func viewDidAppear(_ animated: Bool) {
-        if UserDefaults.standard.double(forKey: "homeLat") == 0.0 && UserDefaults.standard.double(forKey: "homeLon") == 0.0 {
+        if UserDefaults.standard.double(forKey: "homeLat") == 0.0 && UserDefaults.standard.double(forKey: "homeLon") == 0.0 && UserDefaults.standard.bool(forKey: "warnings"){
             
             performSegue(withIdentifier: "firstLaunch", sender: nil) // open splash screen
         }
@@ -29,15 +29,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
         // Do any additional setup after loading the view.
         counterLabel.text = String(describing: GlobalData.Data.days) + " days in lockdown"
 
-        if UserDefaults.standard.double(forKey: "homeLat") != 0.0 && UserDefaults.standard.double(forKey: "homeLon") != 0.0 && CLLocationManager.authorizationStatus() != .denied {
+        if UserDefaults.standard.double(forKey: "homeLat") != 0.0 && UserDefaults.standard.double(forKey: "homeLon") != 0.0 && CLLocationManager.authorizationStatus() != .denied && UserDefaults.standard.bool(forKey: "warnings"){
             
             // MARK: - Location Stuff
-            
-            notificationCenter.delegate = self
-            locationManager.delegate = self
-            locationManager.requestWhenInUseAuthorization()
+            if UserDefaults.standard.bool(forKey: "warnings") {
+                notificationCenter.delegate = self
+                locationManager.delegate = self
+                locationManager.requestWhenInUseAuthorization()
 
-            if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            
                 /*
                 if UserDefaults.standard.double(forKey: "homeLat") == 0.0 && UserDefaults.standard.double(forKey: "homeLon") == 0.0 {
                     UserDefaults.standard.setValue(locationManager.location?.coordinate.latitude,
@@ -91,7 +91,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .denied {
-            
+            UserDefaults.standard.setValue(false, forKey: "warnings")
+        } else if status == .authorizedAlways || status == .authorizedWhenInUse {
+            UserDefaults.standard.setValue(true, forKey: "warnings")
         }
     }
     
