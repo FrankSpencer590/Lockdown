@@ -14,12 +14,45 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>SCSDKClientId</key>
+	<string>91433c5c-e590-4db8-9fd5-fe71d979b4fb</string>
+	<key>SCSDKScopes</key>
+	<array>
+		<string>https://auth.snapchat.com/oauth2/api/user.display_name</string>
+		<string>https://auth.snapchat.com/oauth2/api/user.bitmoji.avatar</string>
+		<string>https://auth.snapchat.com/oauth2/api/user.external_id</string>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>bitmoji-sdk</string>
+		<string>itms-apps</string>
+		<string>snapchat</string>
+	</array>
+	<key>SCSDKRedirectUrl</key>
+	<string>lockdown://snapchat</string>
+	<key>CFBundleURLSchemes</key>
+	<array>
+		<string>lockdown</string>
+	</array>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.rhm-computing.lockdown</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>lockdown</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSRequiresIPhoneOS</key>

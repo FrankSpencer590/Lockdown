@@ -9,6 +9,7 @@
 import UIKit
 import CoreLocation
 import UserNotifications
+import SCSDKCreativeKit
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotificationCenterDelegate {
     @IBOutlet weak var counterLabel: UILabel!
@@ -22,6 +23,77 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UNUserNotific
             
             performSegue(withIdentifier: "firstLaunch", sender: nil) // open splash screen
         }
+    }
+    
+    @IBAction func shareButtonPressed(_ sender: Any) {
+        let width: CGFloat = 300
+        let height: CGFloat = 200
+
+        var stickerImage = UIImage(named: "whiteRounded")!/* Prepare a sticker image */
+                
+        
+        let text = "    "+String(describing: GlobalData.Data.days) + """
+         days
+        in lockdown
+        """
+        stickerImage = textToImage(drawText: text as NSString, inImage: stickerImage, atPoint: CGPoint(x: 35, y: 190))!
+        
+        let sticker = SCSDKSnapSticker(stickerImage: stickerImage)
+
+        sticker.width = width
+        
+        sticker.height = height
+        /* Modeling a Snap using SCSDKPhotoSnapContent */
+        let snap = SCSDKNoSnapContent()
+        snap.sticker = sticker
+        
+        let snapAPI = SCSDKSnapAPI(content: snap)
+        
+        
+        snapAPI.startSnapping { (error) in
+            print(error?.localizedDescription as Any)
+        }
+ 
+        
+        
+        
+    }
+    
+    func textToImage(drawText: NSString, inImage: UIImage, atPoint: CGPoint) -> UIImage? {
+
+        // Setup the font specific variables
+        let textColor = UIColor.black
+        let textFont = UIFont.boldSystemFont(ofSize: 120)
+
+        // Setup the image context using the passed image
+        let scale = UIScreen.main.scale
+        UIGraphicsBeginImageContextWithOptions(inImage.size, false, scale)
+
+        // Setup the font attributes that will be later used to dictate how the text should be drawn
+        let textFontAttributes = [
+            NSAttributedString.Key.font: textFont,
+            NSAttributedString.Key.foregroundColor: textColor,
+        ]
+
+        // Put the image into a rectangle as large as the original image
+        inImage.draw(in: CGRect(x: 0, y: 0, width: inImage.size.width, height: inImage.size.height))
+
+        // Create a point within the space that is as bit as the image
+        let rect = CGRect(x: atPoint.x, y: atPoint.y, width: inImage.size.width, height: inImage.size.height)
+        
+
+        // Draw the text into an image
+        drawText.draw(in: rect, withAttributes: textFontAttributes)
+
+        // Create a new image out of the images we have created
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+
+        // End the context now that we have the image we need
+        UIGraphicsEndImageContext()
+
+        //Pass the image back up to the caller
+        return newImage
+
     }
     
     override func viewDidLoad() {
