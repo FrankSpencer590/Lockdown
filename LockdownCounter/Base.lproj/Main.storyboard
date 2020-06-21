@@ -16,16 +16,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#ProtectTheNHS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkR-2Z-dT3">
-                                <rect key="frame" x="20" y="49" width="374" height="36"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="36" id="C4F-nC-skl"/>
-                                </constraints>
+                                <rect key="frame" x="20" y="826" width="374" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nu-T8-WjQ">
-                                <rect key="frame" x="20" y="824" width="374" height="38"/>
+                                <rect key="frame" x="20" y="44" width="374" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Share with Snapchat">
                                     <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -43,16 +40,17 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="0nu-T8-WjQ" firstAttribute="bottom" secondItem="43h-cI-GJ2" secondAttribute="bottom" id="CH7-Ea-8oT"/>
-                            <constraint firstItem="43h-cI-GJ2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Cbe-lX-pxV"/>
-                            <constraint firstItem="GkR-2Z-dT3" firstAttribute="leading" secondItem="0nu-T8-WjQ" secondAttribute="leading" id="H1f-Lq-Bd4"/>
-                            <constraint firstItem="43h-cI-GJ2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="b9p-bv-gqu"/>
-                            <constraint firstItem="43h-cI-GJ2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cEb-sH-2yF"/>
-                            <constraint firstItem="43h-cI-GJ2" firstAttribute="leading" secondItem="0nu-T8-WjQ" secondAttribute="leading" id="iEU-0f-dad"/>
-                            <constraint firstItem="GkR-2Z-dT3" firstAttribute="trailing" secondItem="0nu-T8-WjQ" secondAttribute="trailing" id="pB4-4j-Mcv"/>
-                            <constraint firstItem="GkR-2Z-dT3" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="tcB-Ua-ojE"/>
-                            <constraint firstItem="43h-cI-GJ2" firstAttribute="trailing" secondItem="0nu-T8-WjQ" secondAttribute="trailing" id="uqV-vT-N21"/>
-                            <constraint firstItem="43h-cI-GJ2" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="x5j-RC-iLb"/>
+                            <constraint firstItem="0nu-T8-WjQ" firstAttribute="trailing" secondItem="43h-cI-GJ2" secondAttribute="trailing" id="2rD-ON-wZD"/>
+                            <constraint firstItem="0nu-T8-WjQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="2uG-J7-Q73"/>
+                            <constraint firstItem="43h-cI-GJ2" firstAttribute="top" secondItem="0nu-T8-WjQ" secondAttribute="top" id="DOX-i9-ucX"/>
+                            <constraint firstItem="43h-cI-GJ2" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eSI-Im-2eb"/>
+                            <constraint firstItem="43h-cI-GJ2" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="jBf-N7-gdk"/>
+                            <constraint firstItem="43h-cI-GJ2" firstAttribute="leading" secondItem="0nu-T8-WjQ" secondAttribute="leading" id="l20-mj-2NK"/>
+                            <constraint firstItem="0nu-T8-WjQ" firstAttribute="trailing" secondItem="GkR-2Z-dT3" secondAttribute="trailing" id="lKG-Mx-5nk"/>
+                            <constraint firstItem="43h-cI-GJ2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="mdb-kH-88a"/>
+                            <constraint firstItem="43h-cI-GJ2" firstAttribute="baseline" secondItem="GkR-2Z-dT3" secondAttribute="firstBaseline" id="njL-s8-j6h"/>
+                            <constraint firstItem="43h-cI-GJ2" firstAttribute="leading" secondItem="GkR-2Z-dT3" secondAttribute="leading" id="plX-jm-6BE"/>
+                            <constraint firstItem="43h-cI-GJ2" firstAttribute="bottom" secondItem="GkR-2Z-dT3" secondAttribute="bottom" id="yKV-13-hfW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
